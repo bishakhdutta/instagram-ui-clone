@@ -12,7 +12,7 @@ function App() {
         <ThemeContext>
           <BrowserRouter>
             <Routes>
-              <Route path="/" index element={<Homepage />} />
+              <Route path="/instagram-ui-clone" index element={<Homepage />} />
               <Route element={<Notificationpage />} />
               <Route element={<Searchpage />} />
             </Routes>

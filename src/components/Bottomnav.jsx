@@ -17,7 +17,7 @@ const Bottomnav = () => {
     }
   }, [usr]);
   return (
-    <div className="fixed -bottom-1 bg-white h-14 w-full flex justify-evenly items-center gap-2 border-t-2">
+    <div className="max-w-[450px] fixed -bottom-1 bg-white h-14 w-full flex justify-evenly items-center gap-2 border-t-2">
       <div>
         <HomeIcon sx={{ fontSize: "34px" }} />
       </div>

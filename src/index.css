@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root{
+    --ired: #ff3040;
+}
+
+@font-face {
+    font-family: insFont;
+    src: url(./fonts/ins.otf);
+}
+.insFont{
+    font-family: insFont;
+}
+*{
+    box-sizing: border-box;
+}

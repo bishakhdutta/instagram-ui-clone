@@ -69,7 +69,7 @@ const MultiMedia = ({ media, type, callback }) => {
           <span
           style={mobileStyle}
             ref={swiper}
-            className="flex snap-x snap-mandatory scrollbar-none gap-[2px]"
+            className="flex transition duration-300 snap-x snap-mandatory scrollbar-none gap-[2px]"
           >
             {media.map((data, i) => {
               return (

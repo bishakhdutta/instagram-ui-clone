@@ -77,10 +77,7 @@ const Post = ({ id, url, caption, likes, usr, profile }) => {
         </div>
         <MoreHorizIcon />
       </div>
-      <div
-        className="p-1 relative flex justify-center items-center"
-        onDoubleClick={() => likeClickHandler(2)}
-      >
+      <div className="p-1 z-10 relative flex justify-center items-center">
         <span ref={dblLikeRef} className="absolute hidden z-10">
           <FavoriteIcon className="text-white" sx={{ fontSize: "80px" }} />
         </span>
@@ -88,7 +85,11 @@ const Post = ({ id, url, caption, likes, usr, profile }) => {
           className="w-full bg-slate-400 rounded-md object-cover object-center"
           src={url}
         /> */}
-        <MultiMedia media={[url,url]} type="img" />
+        <MultiMedia
+          media={[url, url, url]}
+          type="img"
+          callback={likeClickHandler}
+        />
       </div>
       <div className="flex justify-between px-2 py-1">
         <div className="flex items-center gap-3">

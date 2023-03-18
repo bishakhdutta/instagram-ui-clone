@@ -46,8 +46,8 @@ const MultiMedia = ({ media, type, callback }) => {
   if (type == "img") {
     return (
       <div
-        onMouseOver={() => setHover(true)}
-        onMouseOut={() => setHover(false)}
+        onMouseOver={() => {if(!isMobile)setHover(true)}}
+        onMouseOut={() => {if(!isMobile)setHover(false)}}
         ref={postRef}
         className="w-full overflow-hidden relative flex items-center"
       >

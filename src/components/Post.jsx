@@ -7,6 +7,7 @@ import BookmarkIcon from "@mui/icons-material/Bookmark";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useRef, useState } from "react";
 import { useApi } from "../hooks/useApi";
+import MultiMedia from "./MultiMedia";
 const Post = ({ id, url, caption, likes, usr, profile }) => {
   const [comments, getComments] = useApi(
     `https://dummyapi.io/data/v1/post/${id}/comment`
@@ -80,13 +81,14 @@ const Post = ({ id, url, caption, likes, usr, profile }) => {
         className="p-1 relative flex justify-center items-center"
         onDoubleClick={() => likeClickHandler(2)}
       >
-        <span ref={dblLikeRef} className="absolute hidden">
+        <span ref={dblLikeRef} className="absolute hidden z-10">
           <FavoriteIcon className="text-white" sx={{ fontSize: "80px" }} />
         </span>
-        <img
+        {/* <img
           className="w-full bg-slate-400 rounded-md object-cover object-center"
           src={url}
-        />
+        /> */}
+        <MultiMedia media={[url,url]} type="img" />
       </div>
       <div className="flex justify-between px-2 py-1">
         <div className="flex items-center gap-3">

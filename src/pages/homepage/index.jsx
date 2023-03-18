@@ -37,7 +37,7 @@ const Homepage = () => {
 
   return (
     <main style={style} className="pb-14">
-      <nav className="z-10 top-0 bg-white flex justify-between px-4 h-12 w-screen max-w-[450px] items-center border-b-2 fixed">
+      <nav className="z-30 top-0 bg-white flex justify-between px-4 h-12 w-screen max-w-[450px] items-center border-b-2 fixed">
         <div className="flex insFont gap-2 text-[25px] items-center">
           Instagram
           <KeyboardArrowDownIcon />

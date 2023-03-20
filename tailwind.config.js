@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      boxShadow:{
+        "1": '0 0 2px 1px rgb(214, 214, 214)',
+      },
       keyframes: {
         like: {
           "0%": {

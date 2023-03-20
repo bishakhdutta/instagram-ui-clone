@@ -65,6 +65,7 @@ const Post = ({ id, url, caption, likes, usr, profile }) => {
       }
     }
   };
+  
   return (
     <div className="p-1 text-[14px]">
       <div className="flex justify-between p-2 items-center">
@@ -86,7 +87,7 @@ const Post = ({ id, url, caption, likes, usr, profile }) => {
           src={url}
         /> */}
         <MultiMedia
-          media={[url, url, url]}
+          media={[url,url,url]}
           type="img"
           callback={likeClickHandler}
         />

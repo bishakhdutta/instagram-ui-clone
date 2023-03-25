@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
-import GetPosts from "../../context/PostContext";
+import GetDiscoverPosts from "../../context/DiscoverContext";
 const Searchpage = () => {
-  const [post, getPost] = GetPosts();
+  const [post, getPost] = GetDiscoverPosts();
 
   const PostGrid = () => {
     const postRows = [];
@@ -45,15 +45,15 @@ const Searchpage = () => {
       </>
     );
   };
-  
+
   return (
     <main className="pb-12 relative">
-      <div className="sticky top-0 w-full p-2 bg-white">
+      <div className="sticky top-0 w-full p-2 bg-white border-b">
         <div className="flex gap-2 border rounded-md h-10 items-center p-2">
           <div>
             <SearchIcon />
           </div>
-          <input className="outline-none w-full h-9" type="text" />
+          <input className="outline-none w-full h-9" type="text" placeholder="Discover..." />
         </div>
       </div>
       <div className="">

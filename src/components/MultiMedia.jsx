@@ -85,13 +85,13 @@ const MultiMedia = ({ media, type, callback }) => {
       >
         <div
           onClick={() => swipe("left")}
-          className="z-20 absolute left-2 w-5 h-5 opacity-80 shadow-1 rounded-[50%] bg-[#FAFAFA] flex justify-center items-center"
+          className={`${(index==0)?"opacity-40":"opacity-80"} z-20 absolute left-2 w-5 h-5 shadow-1 rounded-[50%] bg-[#FAFAFA] flex justify-center items-center`}
         >
           <ChevronLeftIcon className="mr-[1px]" />
         </div>
         <div
           onClick={() => swipe("right")}
-          className="z-20 absolute right-2 w-5 h-5 opacity-80 shadow-1 rounded-[50%] bg-[#FAFAFA] flex justify-center items-center"
+          className={`${(index==media.length-1)?"opacity-40":"opacity-80"} z-20 absolute right-2 w-5 h-5 opacity-80 shadow-1 rounded-[50%] bg-[#FAFAFA] flex justify-center items-center`}
         >
           <ChevronRightIcon className="ml-[1px]" />
         </div>

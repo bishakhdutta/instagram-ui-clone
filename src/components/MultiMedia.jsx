@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+
 // import { isMobile } from "react-device-detect";
 const MultiMedia = ({ media, type, callback }) => {
   const postRef = useRef(null);
@@ -103,6 +104,7 @@ const MultiMedia = ({ media, type, callback }) => {
             className="flex min-w-full w-fit duration-300 flex-nowrap gap-[2px]"
           >
             {media.map((data, i) => {
+  
               return (
                 <div className="min-w-full w-fit flex-shrink-0 flex justify-center">
                   <img

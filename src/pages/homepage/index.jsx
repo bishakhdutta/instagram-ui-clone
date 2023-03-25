@@ -5,7 +5,8 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ThemeSet from "../../context/ThemeContext";
 import Story from "../../components/Story";
 import Post from "../../components/Post";
-import { useApi } from "../../hooks/useApi";
+import GetPosts from "../../context/PostContext";
+import GetStories from "../../context/StoryContext";
 const Homepage = () => {
   const [theme, setTheme] = ThemeSet();
   const style = {
@@ -13,12 +14,8 @@ const Homepage = () => {
     background: theme == "light" ? "white" : "black",
   };
   const [pages, setPages] = useState(1);
-  const [storyJSON, getStoryJSON] = useApi(
-    `https://dummyapi.io/data/v1/user?limit=${20 * pages}`
-  );
-  const [postJSON, getPostJSON] = useApi(
-    `https://dummyapi.io/data/v1/post?limit=${20 * pages}`
-  );
+  const [storyJSON, getStoryJSON] = GetStories();
+  const [postJSON, getPostJSON] = GetPosts();
   const loadOnScroll = () => {
     let scrollDistance = Math.ceil(
       window.innerHeight + document.documentElement.scrollTop
@@ -34,7 +31,6 @@ const Homepage = () => {
     getPostJSON(`https://dummyapi.io/data/v1/post?limit=${20 * pages}`);
     return () => window.removeEventListener("scroll", loadOnScroll);
   }, [pages]);
-
   return (
     <main style={style} className="pb-14">
       <nav className="z-30 top-0 bg-white flex justify-between px-4 h-12 w-screen max-w-[450px] items-center border-b-2 fixed">

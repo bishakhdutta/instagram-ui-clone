@@ -3,6 +3,13 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      gridRow: {
+        'span-0': '1 / span 2',
+      },
+      gridColumn: {
+        'span-left': '1',
+        'span-right': '3',
+      },
       boxShadow:{
         "1": '0 0 2px 1px rgb(214, 214, 214)',
       },

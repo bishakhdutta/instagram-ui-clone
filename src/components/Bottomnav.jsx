@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Outlet, Link } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import SendIcon from "@mui/icons-material/Send";
@@ -13,31 +14,36 @@ const Bottomnav = () => {
     try {
       setSrc(usr[0].picture);
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
   }, [usr]);
   return (
-    <div className="max-w-[450px] z-30 fixed -bottom-1 bg-white h-14 w-full flex justify-evenly items-center gap-2 border-t-2">
-      <div>
-        <HomeIcon sx={{ fontSize: "34px" }} />
+    <>
+      <Outlet />
+      <div className="max-w-[450px] z-30 fixed -bottom-1 bg-white h-14 w-full flex justify-evenly items-center gap-2 border-t-2">
+        <Link to="/instagram-ui-clone">
+          <HomeIcon sx={{ fontSize: "34px" }} />
+        </Link>
+        <Link to="/instagram-ui-clone/discover" preventScrollReset={true}>
+          <SearchIcon sx={{ fontSize: "34px" }} />
+        </Link>
+        <div>
+          <MovieFilterIcon sx={{ fontSize: "34px" }} />
+        </div>
+        <div className="relative">
+          <div className="absolute w-4 h-4 bg-[var(--ired)] rounded-[50%] grid place-content-center text-white text-[12px] p-[10px] right-0 border-2 border-white">
+            1
+          </div>
+          <SendIcon sx={{ fontSize: "34px" }} />
+        </div>
+        <div>
+          <img
+            src={src}
+            className="w-[30px] h-[30px] border object-cover border-slate-200 bg-black rounded-[50%]"
+          />
+        </div>
       </div>
-      <div>
-        <SearchIcon sx={{ fontSize: "34px" }} />
-      </div>
-      <div>
-        <MovieFilterIcon sx={{ fontSize: "34px" }} />
-      </div>
-      <div className="relative">
-        <div className="absolute w-4 h-4 bg-[var(--ired)] rounded-[50%] grid place-content-center text-white text-[12px] p-[10px] right-0 border-2 border-white">1</div>
-        <SendIcon sx={{ fontSize: "34px" }} />
-      </div>
-      <div>
-        <img
-          src={src}
-          className="w-[30px] h-[30px] border object-cover border-slate-200 bg-black rounded-[50%]"
-        />
-      </div>
-    </div>
+    </>
   );
 };
 

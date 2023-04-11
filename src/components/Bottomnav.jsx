@@ -12,7 +12,7 @@ const Bottomnav = () => {
   );
   useEffect(() => {
     try {
-      setSrc(usr[0].picture);
+      setSrc(usr[0]?.picture);
     } catch (error) {
       console.log(error);
     }

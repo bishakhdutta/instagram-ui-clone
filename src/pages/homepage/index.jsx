@@ -15,7 +15,7 @@ const Homepage = () => {
   };
   const [pages, setPages] = useState(1);
   const [storyJSON, getStoryJSON] = GetStories();
-  const [postJSON, getPostJSON] = GetPosts();
+  const [postJSON, getPostJSON, postArray] = GetPosts();
   const loadOnScroll = () => {
     let scrollDistance = Math.ceil(
       window.innerHeight + document.documentElement.scrollTop
@@ -50,9 +50,11 @@ const Homepage = () => {
       </nav>
       <section className="select-none overflow-hidden h-[100px] w-screen max-w-[450px] mt-12">
         <div className="flex gap-2 p-2 w-full h-fit overflow-auto scrollbar-none">
-          {storyJSON.map((data) => {
+          {storyJSON.map((data, i) => {
             return (
               <Story
+                index={i}
+                id={data.id}
                 usrname={`${data.firstName}_${data.lastName}`}
                 url={data.picture}
                 key={data.id}

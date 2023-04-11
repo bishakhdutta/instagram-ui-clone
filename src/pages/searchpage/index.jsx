@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import GetDiscoverPosts from "../../context/DiscoverContext";
 const Searchpage = () => {
   const [post, getPost] = GetDiscoverPosts();
-
+  const [explore, setExplore] = useState(false);
+  const inputRef = useRef(null);
+  const exploreFoucs = () => {
+    setExplore(!explore);
+    inputRef.current.focus();
+  };
   const PostGrid = () => {
     const postRows = [];
     let rows = Math.ceil(post.length / 5);
@@ -33,10 +38,10 @@ const Searchpage = () => {
     }
     return (
       <>
-        {postRows.map((data) => {
+        {postRows?.map((data) => {
           return (
             <div className="grid grid-cols-3">
-              {data.map((elem) => {
+              {data?.map((elem) => {
                 return elem;
               })}
             </div>
@@ -47,17 +52,28 @@ const Searchpage = () => {
   };
 
   return (
-    <main className="pb-12 relative">
-      <div className="sticky top-0 w-full p-2 bg-white border-b">
-        <div className="flex gap-2 border rounded-md h-10 items-center p-2">
+    <main className="pb-12 relative flex flex-col h-full">
+      <div className="w-full p-2 bg-white border-b">
+        <div
+          onClick={exploreFoucs}
+          className="flex gap-2 border rounded-md h-10 items-center p-2 justify-center"
+        >
           <div>
             <SearchIcon />
           </div>
-          <input className="outline-none w-full h-9" type="text" placeholder="Discover..." />
+          <input
+            ref={inputRef}
+            className={`${explore ? "w-full" : "w-16"} outline-none h-9 duration-150`}
+            type="text"
+            placeholder="Explore..."
+            onBlur={()=>setExplore(false)}
+          />
         </div>
       </div>
-      <div className="">
-        <PostGrid />
+      <div className="flex-1 max-h-[calc(100vh-108px)] overflow-auto scrollbar-none">
+        <div>
+          <PostGrid />
+        </div>
       </div>
     </main>
   );

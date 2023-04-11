@@ -104,7 +104,6 @@ const MultiMedia = ({ media, type, callback }) => {
             className="flex min-w-full w-fit duration-300 flex-nowrap gap-[2px]"
           >
             {media.map((data, i) => {
-  
               return (
                 <div className="min-w-full w-fit flex-shrink-0 flex justify-center">
                   <img

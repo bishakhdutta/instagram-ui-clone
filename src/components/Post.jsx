@@ -36,7 +36,6 @@ const Post = ({ id, url, caption, likes, usr, profile }) => {
     if (clickCount == 2) {
       dblLikeRef.current.classList.remove("hidden");
       dblLikeRef.current.classList.add("animate-dblLike");
-      console.log(dblLikeRef.current.classList);
       setTimeout(() => {
         dblLikeRef.current.classList.remove("animate-dblLike");
         dblLikeRef.current.classList.add("hidden");
@@ -118,7 +117,7 @@ const Post = ({ id, url, caption, likes, usr, profile }) => {
           })()}
         </div>
         <div className="px-3 text-[13px]">
-          {comments.map((data, i) => {
+          {comments?.map((data, i) => {
             if (i > 1) return;
             return (
               <div key={i}>

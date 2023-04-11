@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Story = ({ usrname, url }) => {
+const Story = ({ index, id, usrname, url }) => {
   return (
-    <Link to={`/story/${usrname}`}>
-      <div className="w-16 h-fit flex flex-col items-center cursor-pointer pointer-events-none">
+    <Link to={`/story/${usrname}`} state={{ userid: id, index: index,usrname:usrname }}>
+      <div className="w-16 h-fit flex flex-col items-center cursor-pointer">
         <div className="w-[60px] h-[60px] rounded-[50%] grid place-content-center bg-gradient-to-tr from-[#FDE047] via-[#fa7e1e]  to-[#F43F5E]">
           <div className="w-14 h-14 rounded-[50%] overflow-hidden border-[3px] border-white">
             <img className="h-full w-full object-cover" src={url} alt="" />

@@ -1,16 +1,18 @@
-import React from "react";
-import {Link} from "react-router-dom";
-const StoryViewer = (props) => {
-  return (
-    <div className="w-full h-full bg-slate-800 text-white">
-    <Link to="/instagram-ui-clone">
-      <div className="insFont text-[25px]">
-        Instagram
-      </div>
-      </Link>
-      story of {props.name}
-    </div>
-  );
-};
+import React, { useEffect } from 'react'
+import { useOutletContext, useParams } from 'react-router-dom'
+import { useApi } from '../hooks/useApi';
 
-export default StoryViewer;
+const StoryViewer = () => {
+    const {storyid}=useParams();
+    const [post,getPost]=useApi(`https://dummyapi.io/data/v1/post/${storyid}`);
+    useEffect(()=>{
+      getPost(`https://dummyapi.io/data/v1/post/${storyid}`);
+    },[storyid])
+  return (
+    <div>
+    <img src={post?.image} />
+    </div>
+  )
+}
+
+export default StoryViewer

@@ -17,7 +17,7 @@ const StoryProfile = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (stories[media]?.id) {
-      navigate(`/story/${user?.usrname}/${stories[media]?.id}`);
+      navigate(`/instagram-ui-clone/story/${user?.usrname}/${stories[media]?.id}`);
     }
     let interval = setInterval(() => {
       if(stories.length-1>=media)setMedia(media + 1);

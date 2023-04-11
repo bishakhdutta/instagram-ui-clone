@@ -24,9 +24,9 @@ function App() {
                   element={<Searchpage />}
                 />
               </Route>
-              <Route path="/story" element={<Storypage />}>
-                <Route path="/story/:name" element={<StoryProfile/>}>
-                  <Route path="/story/:name/:storyid" element={<StoryViewer/>} />
+              <Route path="/instagram-ui-clone/story" element={<Storypage />}>
+                <Route path="/instagram-ui-clone/story/:name" element={<StoryProfile/>}>
+                  <Route path="/instagram-ui-clone/story/:name/:storyid" element={<StoryViewer/>} />
                 </Route>
               </Route>
             </Routes>

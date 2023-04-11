@@ -1,7 +1,7 @@
 {
   "name": "instagram-ui-clone",
   "version": "0.1.0",
-  "homepage": "https://bishakhdutta.github.io/instagram-ui-clone",
+  "homepage": "https://bishakhdutta.github.io/instagram-ui-clone/#",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",

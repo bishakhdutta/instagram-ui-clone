@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route,HashRouter } from "react-router-dom";
 // import SlideRoutes from 'react-slide-routes';
 import "./App.css";
 import Homepage from "./pages/homepage/index";
@@ -14,7 +14,7 @@ function App() {
     <div className="flex justify-center bg-black min-h-screen">
       <div className="w-[450px] bg-white relative">
         <ContextWrapper>
-          <BrowserRouter>
+          <HashRouter>
             <Routes>
               <Route path="/instagram-ui-clone" element={<Bottomnav />}>
                 <Route index element={<Homepage />} />
@@ -30,7 +30,7 @@ function App() {
                 </Route>
               </Route>
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </ContextWrapper>
       </div>
     </div>

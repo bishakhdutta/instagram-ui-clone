@@ -13,22 +13,39 @@ const StoryProfile = () => {
   const [stories, getStories] = useApi(
     `https://dummyapi.io/data/v1/user/${user?.userid}/post`
   );
+  const [userInfo, getUserInfo] = useApi(
+    `https://dummyapi.io/data/v1/user/${user?.userid}`
+  );
   const [media, setMedia] = useState(0);
   const navigate = useNavigate();
   useEffect(() => {
     if (stories[media]?.id) {
-      navigate(`/instagram-ui-clone/story/${user?.usrname}/${stories[media]?.id}`);
+      navigate(
+        `/instagram-ui-clone/story/${user?.usrname}/${stories[media]?.id}`
+      );
     }
-    let interval = setInterval(() => {
-      if(stories.length-1>=media)setMedia(media + 1);
-    }, 10000);
-    return () => clearInterval(interval);
-  }, [stories,media]);
+  }, [stories, media]);
   return (
     <div className="w-full h-full bg-slate-800 text-white">
-      <div>
-        <Outlet />
+      <div className="flex items-center gap-2 p-1">
+        <div className="w-8 aspect-square rounded-[50%] overflow-hidden">
+          <img className="object-cover" src={userInfo?.picture} alt="dp" />
+        </div>
+        {user?.usrname}
       </div>
+      <div className="flex gap-1 px-1 py-2">
+        {stories?.map((data, i) => {
+          return (
+            <div
+              key={i}
+              className={`${
+                media >= i ? "bg-white" : "bg-slate-500"
+              } flex-1 h-1 rounded-md`}
+            ></div>
+          );
+        })}
+      </div>
+      <Outlet context={[media, setMedia]} />
     </div>
   );
 };

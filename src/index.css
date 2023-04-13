@@ -4,6 +4,12 @@
 :root{
     --ired: #ff3040;
 }
+*::backdrop{
+    all: unset;
+}
+:fullscreen::backdrop{
+    all: unset;
+}
 
 @font-face {
     font-family: insFont;

@@ -13,7 +13,7 @@ const Storypage = () => {
 
   return (
     <>
-      <div ref={story} className="w-full text-black">
+      <div ref={story} className="w-full text-black ">
         <Link to="/instagram-ui-clone">
           <div className="insFont text-[25px]">Instagram</div>
         </Link>

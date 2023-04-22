@@ -14,6 +14,14 @@ module.exports = {
         "1": '0 0 2px 1px rgb(214, 214, 214)',
       },
       keyframes: {
+        timer:{
+          "0%":{
+            backgroundPosition: "right bottom",
+          },
+          "100%":{
+            backgroundPosition: "left bottom",
+          },
+        },
         like: {
           "0%": {
             transform: "scale(1)",
@@ -52,6 +60,7 @@ module.exports = {
         },
       },
       animation:{
+        timer: "timer 6s linear forwards",
         like: 'like 0.5s ease-in-out',
         dblLike: 'dblLike 0.7s ease-in-out forwards',
       },

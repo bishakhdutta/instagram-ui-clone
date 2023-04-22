@@ -23,15 +23,15 @@ const StoryViewer = () => {
     return () => clearTimeout(timeout);
   }, [loading]);
   return (
-    <div className="h-full">
+    <div className="flex-1 overflow-hidden flex items-center flex-col">
       {loading ? (
-        <div className="bg-slate-700 w-full h-full flex justify-center items-center">
+        <div className="bg-slate-800 w-full h-full flex justify-center items-center">
           <span className="animate-spin">
             <LoopIcon sx={{fontSize:'35px',color:'grey'}} />
           </span>
         </div>
       ) : (
-        <img src={post?.image} />
+        <img className="object-contain max-h-[calc(97vh-60px)]" src={post?.image} />
       )}
     </div>
   );

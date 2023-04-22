@@ -36,12 +36,12 @@ const Bottomnav = () => {
           </div>
           <SendIcon sx={{ fontSize: "34px" }} />
         </div>
-        <div>
+        <Link to="/instagram-ui-clone/your_profile">
           <img
             src={src}
             className="w-[30px] h-[30px] border object-cover border-slate-200 bg-black rounded-[50%]"
           />
-        </div>
+        </Link>
       </div>
     </>
   );

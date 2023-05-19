@@ -8,6 +8,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useRef, useState } from "react";
 import { useApi } from "../hooks/useApi";
 import MultiMedia from "./MultiMedia";
+import { Link } from "react-router-dom";
 const Post = ({ id, url, caption, likes, usr, profile }) => {
   const [comments, getComments] = useApi(
     `https://dummyapi.io/data/v1/post/${id}/comment`
@@ -64,7 +65,7 @@ const Post = ({ id, url, caption, likes, usr, profile }) => {
       }
     }
   };
-  
+
   return (
     <div className="p-1 text-[14px]">
       <div className="flex justify-between p-2 items-center">
@@ -73,7 +74,7 @@ const Post = ({ id, url, caption, likes, usr, profile }) => {
             className="bg-slate-400 w-8 h-8 rounded-[50%] object-cover"
             src={profile}
           />
-          <div className="font-bold">{usr}</div>
+          <Link to={`/instagram-ui-clone/${usr}`} className="font-bold">{usr}</Link>
         </div>
         <MoreHorizIcon />
       </div>
@@ -81,12 +82,8 @@ const Post = ({ id, url, caption, likes, usr, profile }) => {
         <span ref={dblLikeRef} className="absolute hidden z-10">
           <FavoriteIcon className="text-white" sx={{ fontSize: "80px" }} />
         </span>
-        {/* <img
-          className="w-full bg-slate-400 rounded-md object-cover object-center"
-          src={url}
-        /> */}
         <MultiMedia
-          media={[url,url,url]}
+          media={[url, url, url]}
           type="img"
           callback={likeClickHandler}
         />

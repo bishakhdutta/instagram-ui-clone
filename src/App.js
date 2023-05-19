@@ -33,7 +33,7 @@ function App() {
                 <Route index element={<Homepage />} />
                 <Route element={<Notificationpage />} />
                 <Route path="discover" element={<Searchpage />} />
-                <Route path="/instagram-ui-clone/:name" element={<Profile/>} />
+                <Route path="/instagram-ui-clone/:name/*" element={<Profile/>} />
               </Route>
               <Route
                 path="/instagram-ui-clone/story"

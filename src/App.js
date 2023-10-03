@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 // import SlideRoutes from 'react-slide-routes';
 import "./App.css";
 import Homepage from "./pages/homepage/index";
@@ -12,6 +12,7 @@ import StoryViewer from "./components/StoryViewer";
 import { useEffect, useState, useRef } from "react";
 import Profile from "./pages/profilepage";
 function App() {
+  const location = useLocation();
   const ref = useRef(null);
   const [fullscreen, setFullScreen] = useState(false);
   useEffect(() => {
@@ -28,7 +29,7 @@ function App() {
       <div className="w-[450px] bg-white relative">
         <ContextWrapper>
           <BrowserRouter>
-            <Routes>
+            <Routes location={location} key={location.pathname}>
               <Route path="/instagram-ui-clone" element={<Bottomnav />}>
                 <Route index element={<Homepage />} />
                 <Route element={<Notificationpage />} />

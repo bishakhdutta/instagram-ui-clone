@@ -28,7 +28,6 @@ function App() {
     <div ref={ref} className="flex justify-center bg-black min-h-screen">
       <div className="w-[450px] bg-white relative">
         <ContextWrapper>
-          <BrowserRouter>
             <Routes location={location} key={location.pathname}>
               <Route path="/instagram-ui-clone" element={<Bottomnav />}>
                 <Route index element={<Homepage />} />
@@ -51,7 +50,6 @@ function App() {
                 </Route>
               </Route>
             </Routes>
-          </BrowserRouter>
         </ContextWrapper>
       </div>
     </div>
